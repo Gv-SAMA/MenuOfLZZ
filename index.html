@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>美味点餐系统</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="main-container">
+        <!-- 左侧导航栏 -->
+        <nav class="sidebar">
+            <div class="logo">美味餐厅</div>
+            <ul class="nav-links">
+                <li class="active" data-tab="order-tab"><a href="#">点菜</a></li>
+                <li data-tab="add-dish-tab"><a href="#">增加新菜</a></li>
+            </ul>
+        </nav>
+
+        <!-- 主内容区 -->
+        <div class="content-area">
+            <!-- 点菜标签页 -->
+            <!-- 修改点菜标签页的结构 -->
+            <div id="order-tab" class="tab-content active">
+                <div class="container">
+                    <h1>欢迎点餐</h1>
+                    
+                    <!-- 将购物车移到菜单上方 -->
+                    <div class="cart-container">
+                        <div class="cart">
+                            <h2>我的订单 <span id="cartCount">0</span></h2>
+                            <ul id="cartItems"></ul>
+                            <div class="total">总计: ￥<span id="totalPrice">0.00</span></div>
+                            <button id="submitOrder">提交订单</button>
+                        </div>
+                    </div>
+                    
+                    <!-- 菜单展示 -->
+                    <div class="menu">
+                        <h2>今日菜单</h2>
+                        <div class="filters">
+                            <button class="filter-btn active" data-category="all">全部</button>
+                            <button class="filter-btn" data-category="主食">主食</button>
+                            <button class="filter-btn" data-category="炒菜">炒菜</button>
+                            <button class="filter-btn" data-category="炖菜">炖菜</button>
+                            <button class="filter-btn" data-category="蒸菜">炖菜</button>
+                            <button class="filter-btn" data-category="汤">汤</button>
+                            <button class="filter-btn" data-category="卤菜">卤菜</button>
+                            <button class="filter-btn" data-category="饮料">饮料</button>
+                            <button class="filter-btn" data-category="小吃">小吃</button>
+                        </div>
+                        <div id="menuItems" class="menu-items"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 增加新菜标签页 -->
+            <div id="add-dish-tab" class="tab-content">
+                <div class="add-dish-container">
+                    <h1>添加新菜品</h1>
+                    <form id="addDishForm">
+                        <div class="form-group">
+                            <label for="dishName">菜品名称</label>
+                            <input type="text" id="dishName" placeholder="请输入菜品名称" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="dishPrice">价格</label>
+                            <input type="number" id="dishPrice" placeholder="请输入价格" min="0" step="0.01" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="dishCategory">分类</label>
+                            <select id="dishCategory">
+                                <option value="主食">主食</option>
+                                <option value="主食">炒菜</option>
+                                <option value="主食">炖菜</option>
+                                <option value="主食">卤菜</option>
+                                <option value="饮料">饮料</option>
+                                <option value="小吃">小吃</option>
+                                <option value="其他">其他</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="dishDescription">描述 (可选)</label>
+                            <textarea id="dishDescription" placeholder="请输入菜品描述"></textarea>
+                        </div>
+                        <button type="submit">添加菜品</button>
+                    </form>
+                    <div id="addDishMessage" class="message"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 订单结果弹窗 -->
+    <div id="orderModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>您的订单详情</h2>
+            <div id="orderResult"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
