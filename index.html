@@ -10,10 +10,10 @@
     <div class="main-container">
         <!-- 左侧导航栏 -->
         <nav class="sidebar">
-            <div class="logo">美味餐厅</div>
+            <div class="logo">宝宝菜单</div>
             <ul class="nav-links">
                 <li class="active" data-tab="order-tab"><a href="#">点菜</a></li>
-                <li data-tab="add-dish-tab"><a href="#">增加新菜</a></li>
+                <!-- <li class="active"data-tab="add-dish-tab"><a href="#">增加新菜</a></li> -->
             </ul>
         </nav>
 
@@ -23,12 +23,12 @@
             <!-- 修改点菜标签页的结构 -->
             <div id="order-tab" class="tab-content active">
                 <div class="container">
-                    <h1>欢迎点餐</h1>
+                    <h1>说吧想吃啥</h1>
                     
                     <!-- 将购物车移到菜单上方 -->
                     <div class="cart-container">
                         <div class="cart">
-                            <h2>我的订单 <span id="cartCount">0</span></h2>
+                            <h2>已点菜品数量 <span id="cartCount">0</span></h2>
                             <ul id="cartItems"></ul>
                             <div class="total">总计: ￥<span id="totalPrice">0.00</span></div>
                             <button id="submitOrder">提交订单</button>
