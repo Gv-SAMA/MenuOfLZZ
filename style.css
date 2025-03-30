@@ -15,7 +15,7 @@ body {
 /* 侧边导航栏 */
 .sidebar {
     width: 250px;
-    background-color: #c4417e;
+    background-color: #dd3e54;
     color: white;
     padding: 20px 0;
 }
@@ -46,7 +46,7 @@ body {
 }
 
 .nav-links li.active {
-    background-color: #3498db;
+    background-color: #dd3e54;
 }
 
 .nav-links a {
